@@ -8,6 +8,7 @@ const bodyParser = require('body-parser');         //body-parser to parse the JS
 const mongoose = require('mongoose');              //Mongoose package to connect to back-end mongoDB
 const cors = require('cors');                      //Package to connect middle-ware or cross-platform applications
 const config = require('./config');
+const port = process.env.PORT || 3030;
 
 const app = express();                              //wrapping the new express application in app variable 
 
@@ -42,6 +43,6 @@ app.use('/api/search', productSearchRoutes);
 
 
 //Setting up the port for server to run on 
-app.listen(config.port, err => {
-  console.log('Server connected at port: ' + config.port);
+app.listen(port => {
+  console.log('Server connected at port: ' + port);
 });
